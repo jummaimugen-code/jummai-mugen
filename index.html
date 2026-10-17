@@ -275,8 +275,14 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
     padding:12px 0 8px;
   }
+  .header-line{ display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    min-height:44px; padding:8px 14px; border-radius:24px; border:1px solid #39935f;
+    background:#086f34; color:#fff; font-size:16px; line-height:1.5; text-decoration:none; }
+  .header-line svg{ width:20px; height:20px; flex-shrink:0; }
   .hero-brand{ display:flex; align-items:center; gap:10px; }
   .hero-brand img{ width:44px; height:44px; border-radius:50%; background:#fff; padding:3px; }
   .hero-brand span{ font-family:'Shippori Mincho',serif; font-size:15px; letter-spacing:.14em; color:var(--sub-on-navy); }
@@ -915,11 +921,12 @@
         <img src="rob6-assets/logo-rb6.png" alt="ロブ6 ロゴマーク">
         <span data-i18n="brand">ロイヤルブレンド6</span>
       </div>
+      <a id="headerLine" class="header-line js-line" href="https://line.me/R/ti/p/@881rdcdg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11c0 4-3.6 7-8 7H9l-4 3v-5c-2-1.2-3-3-3-5 0-4 4-7 9-7s9 3 9 7Z"/></svg><span data-i18n="headerLine">公式LINE</span></a>
     </div>
 
     <div class="hero-body">
       <h1 class="hero-copy" data-i18n="heroCopy">淡麗辛口に、<br><span class="accent">飽きた大人へ。</span></h1>
-      <p class="hero-sub" data-i18n="heroSub">単一の酒蔵の限界を超えた、6種の純米酒のアッサンブラージュ。<br>芳醇濃香、至高の食中酒「ロイヤルブレンド6(ロブ6)」誕生。</p>
+      <p class="hero-sub" data-i18n="heroSub">単一の酒蔵の限界を超えた、6種の純米酒のアッサンブラージュ。<br>芳醇濃香、至高の食中酒「ロイヤルブレンド6(ロブ6)」誕生。<br>フランス・ジャパンエキスポに出品した日本酒です。</p>
 
       <div class="hero-visual">
         <div class="hero-bottle">
@@ -1247,7 +1254,8 @@
       notice: '',
       brand: 'ロイヤルブレンド6',
       heroCopy: '淡麗辛口に、<br><span class="accent">飽きた大人へ。</span>',
-      heroSub: '単一の酒蔵の限界を超えた、6種の純米酒のアッサンブラージュ。<br>芳醇濃香、至高の食中酒「ロイヤルブレンド6(ロブ6)」誕生。',
+      headerLine: '公式LINE',
+      heroSub: '単一の酒蔵の限界を超えた、6種の純米酒のアッサンブラージュ。<br>芳醇濃香、至高の食中酒「ロイヤルブレンド6(ロブ6)」誕生。<br>フランス・ジャパンエキスポに出品した日本酒です。',
       couponSlash: '＼ 飲み比べ4本セット・先着10名様 ／',
       couponMain: '11月15日ごろ 予約受付開始予定',
       cta1: 'LINEで友だち追加して開始案内を受け取る',
@@ -1351,7 +1359,8 @@
       notice: '',
       brand: 'Royal Blend 6',
       heroCopy: 'Beyond light and dry —<br><span class="accent">sake for the discerning adult.</span>',
-      heroSub: 'An assemblage of six junmai sake that goes beyond the limits of any single brewery.<br>Rich and aromatic, Royal Blend 6 (ROB6) is the consummate sake for the table.',
+      headerLine: 'Official LINE',
+      heroSub: 'An assemblage of six junmai sake that goes beyond the limits of any single brewery.<br>Rich and aromatic, Royal Blend 6 (ROB6) is the consummate sake for the table.<br>Presented at Japan Expo in France.',
       couponSlash: '— Four-bottle tasting set, first 10 customers —',
       couponMain: 'Pre-orders planned from around November 15',
       cta1: 'Add us on LINE for the pre-order announcement',
@@ -1455,7 +1464,8 @@
       notice: '',
       brand: 'Royal Blend 6',
       heroCopy: '淡麗辛口，已經喝膩？<br><span class="accent">獻給懂酒的大人。</span>',
-      heroSub: '突破單一酒藏極限的6種純米酒調和(Assemblage)。<br>芳醇濃香、至高佐餐酒「Royal Blend 6(ROB6)」誕生。',
+      headerLine: '官方LINE',
+      heroSub: '突破單一酒藏極限的6種純米酒調和(Assemblage)。<br>芳醇濃香、至高佐餐酒「Royal Blend 6(ROB6)」誕生。<br>曾於法國Japan Expo展出。',
       couponSlash: '＼ 四瓶品飲套組・限前10名 ／',
       couponMain: '預計11月15日前後開放預購',
       cta1: '加入LINE好友並接收預購通知',
