@@ -51,4 +51,3 @@ async function refresh(){if(!grant||busy)return;try{state=await call('view');if(
 if(grant){try{state=await call('view');if(state.cart){basket=state.cart.items;saved=true;}msg(state?.cart?.abandonedAt?'前回の試用を表示しています。「試用の受信箱」で案内を確認できます。':'商品を選び、「カートを見る」へお進みください。');}catch(e){grant='';msg('試用リンクの期限または接続をご確認ください。下の「試用を開始する」から始められます。',true);}}
 else msg('最初に「試用を開始する」を押してください。');
 $('access').hidden=!!grant;render();setInterval(refresh,4000);setInterval(()=>{if(state)renderJobs();},1000);
-
