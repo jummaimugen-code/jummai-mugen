@@ -1,16 +1,20 @@
 const API='https://jummai-automatic-fixture.jummai-mugen.workers.dev',STORE='enrec-hp-shop-v1';
+const COOKIE='__Secure-enrec_hp_shop',PATH='/enrec-trial/shop/';
+const clearGrant=()=>{try{sessionStorage.removeItem(STORE);}catch{}document.cookie=`${COOKIE}=; Path=${PATH}; Secure; SameSite=Strict; Max-Age=0`;};
 const $=id=>document.getElementById(id);
 const products=[{id:'rob6',name:'ロブ6'},{id:'rob6-one',name:'ロブ6＋ワン'},{id:'rob6-p2',name:'ロブ6 PⅡ'}];
 let grant='',basket=[],state=null,stage='products',busy=false,saved=false;
 const incoming=new URLSearchParams(location.hash.slice(1)).get('grant');
-if(incoming){history.replaceState(null,'',location.pathname);try{sessionStorage.setItem(STORE,incoming);}catch{}}
-try{grant=incoming||sessionStorage.getItem(STORE)||'';}catch{grant=incoming||'';}
+if(incoming){history.replaceState(null,'',location.pathname);try{sessionStorage.setItem(STORE,incoming);}catch{}document.cookie=`${COOKIE}=${encodeURIComponent(incoming)}; Path=${PATH}; Secure; SameSite=Strict`;}
+let sessionCookie='';try{sessionCookie=decodeURIComponent(document.cookie.split('; ').find(v=>v.startsWith(COOKIE+'='))?.slice(COOKIE.length+1)||'');}catch{}
+try{grant=incoming||sessionStorage.getItem(STORE)||sessionCookie;}catch{grant=incoming||sessionCookie;}
+if(grant){try{sessionStorage.setItem(STORE,grant);}catch{}}
 const msg=(text,error=false)=>{$('status').textContent=text;$('status').classList.toggle('error',error);};
 const el=(tag,text)=>{const e=document.createElement(tag);e.textContent=text;return e;};
 const operation=()=> 'fixture-'+crypto.randomUUID();
 async function call(action,data,keepalive=false){
   const r=await fetch(API+'/api/shop/'+action,{method:data?'POST':'GET',credentials:'omit',keepalive,headers:{'X-Shop-Token':grant,...(data?{'Content-Type':'application/json','X-Operation-ID':operation()}: {})},...(data?{body:JSON.stringify(data)}:{})});
-  const value=await r.json();if(!r.ok)throw Error(value.error==='fixture_capacity'?'試用枠がいっぱいです。データを消さず、管理者へお知らせください。':'接続・操作を確認できませんでした。繰り返し開始せず、画面を読み込み直してください。');return value;
+  const value=await r.json();if(!r.ok){if(value.error==='invalid_shop_request'){clearGrant();grant='';}throw Error(value.error==='fixture_capacity'?'試用枠がいっぱいです。データを消さず、管理者へお知らせください。':'接続・操作を確認できませんでした。繰り返し開始せず、画面を読み込み直してください。');}return value;
 }
 function show(next){stage=next;for(const id of ['products','cart','inbox','finished'])$(id).hidden=id!==next;for(const [id,page] of [['show-shop','products'],['show-cart','cart'],['show-inbox','inbox']])$(id).setAttribute('aria-current',String(next===page));}
 function render(){
