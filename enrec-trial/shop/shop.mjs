@@ -33,7 +33,8 @@ function render(){
 }
 function renderJobs(){
   $('jobs').replaceChildren();
-  for(const j of state?.jobs||[]){const left=Math.max(0,Math.ceil((j.due_at-Date.now())/1000));$('jobs').append(el('p',`${j.step}回目：${j.state==='stopped'?'停止（購入済み）':j.state==='simulated'?'案内を記録済み':j.state==='pending'?(left?'あと '+left+'秒':'処理結果を確認中'):j.state==='checking'?'処理中':j.state}`));}
+  const stopped={purchase:'停止（購入済み）',expired:'停止（期限を過ぎたため）',interrupted:'停止（処理の中断・確認が必要）',revoke:'停止（案内の同意なし）',verification_unknown:'停止（購入状況を確認できません）'};
+  for(const j of state?.jobs||[]){const left=Math.max(0,Math.ceil((j.due_at-Date.now())/1000));$('jobs').append(el('p',`${j.step}回目：${j.state==='stopped'?(stopped[j.reason]||'停止（状態を確認してください）'):j.state==='simulated'?'案内を記録済み':j.state==='pending'?(left?'あと '+left+'秒':'処理結果を確認中'):j.state==='checking'?'処理中':j.state==='unknown'?'結果不明（確認が必要）':j.state}`));}
 }
 for(const p of products){const box=el('article','');box.className='product';const img=document.createElement('img');img.src='/rob6-assets/bottle-hero-v2.png';img.alt=p.name+'のシリーズイメージ';box.append(img,el('h3',p.name),el('p','1本 5,500円（税込・試用）'));
  const b=el('button','カートに入れる');b.dataset.add=p.id;b.onclick=()=>{const item=basket.find(v=>v.id===p.id);if(item)item.quantity++;else basket.push({id:p.id,quantity:1});saved=false;render();msg(p.name+'をカートに入れました。「カートを見る」へお進みください。');};box.append(b);$('catalog').append(box);}
