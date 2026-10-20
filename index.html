@@ -953,10 +953,10 @@
       <h3>ロブ6シリーズ・2本セット</h3>
       <p style="font-size:24px;margin:12px 0"><strong>11,000円（税込）＋送料</strong></p>
       <p>ロブ6・ロブ6＋ワン・ロブ6 PⅡから、異なる2銘柄を1本ずつ。</p>
-      <ul style="padding-left:1.3em;line-height:1.9"><li>ロブ6 ＋ ロブ6＋ワン</li><li>ロブ6 ＋ ロブ6 PⅡ</li><li>ロブ6＋ワン ＋ ロブ6 PⅡ</li></ul>
+      <p>下の3つの組み合わせから選べます。</p>
       <p>同じ銘柄2本の組み合わせは対象外です。</p>
       <p><strong>送料（税込）</strong><br>本州880円／北海道1,430円／沖縄2,230円。離島は対象外です。</p>
-      <a href="#order" class="btn btn-blue" style="margin-top:12px">2本の予約方法を見る</a>
+      <a href="#order" class="btn btn-blue set-choice" data-pack="2" data-pair="0" style="margin-top:12px">2本の購入案内を見る</a>
     </article>
     <article style="border:1px solid #d8c9ad;border-radius:12px;padding:24px">
       <h3>ロブ6シリーズ・選べる4本</h3>
@@ -970,7 +970,7 @@
       <p>1本あたり5,500円（税込）。ロブ6・＋ワンは在庫分のみの販売です。</p>
       <p><strong>4本セット購入特典</strong><br>長期熟成古酒「古花」のサンプルをプレゼント。</p>
       <p>基本送料込み。北海道は550円、沖縄・離島は3,300円の追加送料（税込）です。</p>
-      <a href="#order" class="btn btn-blue" style="margin-top:12px">4本の予約方法を見る</a>
+      <a href="#order" class="btn btn-blue set-choice" data-pack="4" data-pair="0" style="margin-top:12px">4本の購入案内を見る</a>
       <p id="exhibition-series" data-i18n="exhibitionSeries">ロブ6＋ワン・ロブ6 PⅡも、今後の出品対象シリーズです。</p>
     </article>
     <article style="border:1px solid #d8c9ad;border-radius:12px;padding:24px">
@@ -985,6 +985,12 @@
   </div>
   <p style="font-size:18px;line-height:1.8;margin-top:20px">日本国内への予約販売です。2本セットは送料別、4本セットは基本送料込み（一部地域は追加送料）です。ロブ6・ロブ6＋ワンは在庫がなくなり次第終了します。</p>
   <p>予約開始のご案内は、公式LINE「じゅんまいムゲン」でお知らせします。</p>
+  <div class="pair-examples" aria-label="ロブ6シリーズの組み合わせ3例">
+    <article><a class="set-choice pair-picture" href="#order" data-pair="0" data-pack="4" aria-label="ロブ6とロブ6＋ワンの購入案内"><img src="rob6-assets/bottle-hero-v2.png" alt="ロブ6シリーズのボトルイメージ" width="864" height="1536" loading="lazy"><img src="rob6-assets/bottle-hero-v2.png" alt="" width="864" height="1536" loading="lazy"></a><h3>ロブ6 ＋ ロブ6＋ワン</h3><a class="set-choice" href="#order" data-pair="0" data-pack="2">各1本・2本セット</a><a class="set-choice" href="#order" data-pair="0" data-pack="4">各2本・4本セット</a></article>
+    <article><a class="set-choice pair-picture" href="#order" data-pair="1" data-pack="4" aria-label="ロブ6とロブ6 PⅡの購入案内"><img src="rob6-assets/bottle-hero-v2.png" alt="ロブ6シリーズのボトルイメージ" width="864" height="1536" loading="lazy"><img src="rob6-assets/bottle-hero-v2.png" alt="" width="864" height="1536" loading="lazy"></a><h3>ロブ6 ＋ ロブ6 PⅡ</h3><a class="set-choice" href="#order" data-pair="1" data-pack="2">各1本・2本セット</a><a class="set-choice" href="#order" data-pair="1" data-pack="4">各2本・4本セット</a></article>
+    <article><a class="set-choice pair-picture" href="#order" data-pair="2" data-pack="4" aria-label="ロブ6＋ワンとロブ6 PⅡの購入案内"><img src="rob6-assets/bottle-hero-v2.png" alt="ロブ6シリーズのボトルイメージ" width="864" height="1536" loading="lazy"><img src="rob6-assets/bottle-hero-v2.png" alt="" width="864" height="1536" loading="lazy"></a><h3>ロブ6＋ワン ＋ ロブ6 PⅡ</h3><a class="set-choice" href="#order" data-pair="2" data-pack="2">各1本・2本セット</a><a class="set-choice" href="#order" data-pair="2" data-pack="4">各2本・4本セット</a></article>
+  </div>
+  <p class="pair-image-note">写真はシリーズ共通のイメージです。銘柄・本数は各組み合わせ名をご確認ください。</p>
 </section>
 
 <!-- ============ 1.5 つかみの4コマ ============ -->
@@ -1202,17 +1208,20 @@
       <div class="product-img">
         <img src="rob6-assets/bottle-wide.jpg" alt="ロイヤルブレンド6(ロブ6) 720ml" loading="lazy" width="1800" height="1187">
       </div>
-      <h2 data-i18n="finalName">ロブ6シリーズ<br>選べる4本セット</h2>
-      <p class="price-composition" data-i18n="priceStrike">3種類から合計4本を選べます</p>
-      <p class="price-now" data-i18n="priceNow">数量限定・予約販売<br><strong>22,000</strong>円(税込)</p>
-      <p class="coupon-code" data-i18n="couponCode">基本送料込み・一部地域は追加送料</p>
+      <h2>購入のご案内</h2>
+      <p id="selected-set" class="price-composition">ロブ6 ＋ ロブ6＋ワン　各2本・合計4本</p>
+      <label class="purchase-choice">本数 <select id="set-pack"><option value="4">4本（各2本）</option><option value="2">2本（各1本）</option></select></label>
+      <label class="purchase-choice">お届け先 <select id="set-region"><option value="mainland">本州</option><option value="hokkaido">北海道</option><option value="okinawa">沖縄</option><option value="island">離島</option></select></label>
+      <p id="selected-total" class="price-now"></p><p id="selected-shipping"></p><p id="selected-gift"></p>
+      <p class="purchase-closed">現在は受付開始前です。この画面では注文・決済は発生しません。</p>
       <a class="btn-line js-line" href="https://line.me/R/ti/p/@881rdcdg" target="_blank" rel="noopener" data-i18n="lineCta">LINEで友だち追加する<small>押すと友だち追加画面が開きます</small></a>
       <a class="btn-cta js-line" href="https://line.me/R/ti/p/@881rdcdg" target="_blank" rel="noopener" data-i18n="cta2">LINEで予約開始の案内を受け取る</a>
-      <p class="pay-note" data-i18n="payNote">基本送料込み。北海道・沖縄・離島は追加送料がかかります。</p>
+      <p class="pay-note">販売開始のお知らせは公式LINEでご案内します。</p>
       <p class="hk-note" data-i18n="hkNote">※ 日本国内限定。海外への発送は行っておりません。</p>
     </div>
   </div>
 </section>
+<nav class="lp-return" aria-label="ページ内の移動"><button type="button" id="lp-back">前の画面へ</button><a href="#">先頭へ</a><a href="#set-menu">セット一覧へ</a></nav>
 
 <!-- ============ フッター ============ -->
 <footer>
@@ -2061,6 +2070,28 @@
 if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1)){
   document.querySelectorAll('[data-i18n="contactBtn"],[data-i18n="footContact"],[data-i18n="kikiInquiry"]').forEach(a=>a.href='https://line.me/R/oaMessage/%40881rdcdg');
 }
+</script>
+<style>
+.pair-examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}.pair-examples article{border:1px solid #d8c9ad;border-radius:12px;padding:18px;background:#fff}.pair-picture{display:flex;justify-content:center;background:#f4f2ed;border-radius:9px;padding:12px;gap:8px}.pair-picture img{width:40%;height:200px;object-fit:contain}.pair-examples h3{font-size:20px;margin:14px 0}.pair-examples article>a:not(.pair-picture){display:block;min-height:48px;padding:10px;border:1px solid #d8c9ad;border-radius:7px;margin-top:10px;text-align:center;color:#172838;text-decoration:none;font-size:18px;font-weight:600}.pair-image-note{font-size:16px}.purchase-choice{display:flex;align-items:center;justify-content:center;gap:12px;margin:15px 0;font-size:19px}.purchase-choice select{font:inherit;padding:10px;max-width:75%;border:1px solid #b3aaa0;border-radius:7px;background:white;color:#172838}.purchase-closed{border:1px solid #bda271;border-radius:8px;padding:14px;line-height:1.8}.lp-return{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;padding:20px}.lp-return a,.lp-return button{font:inherit;color:#172838;background:white;border:1px solid #c6bda9;border-radius:8px;padding:12px 18px;text-decoration:none;min-height:48px}.product-photo-link{display:block;border-radius:8px}.product-photo-link:focus-visible{outline:3px solid #b17b22;outline-offset:4px}@media(max-width:720px){.pair-examples{grid-template-columns:1fr}.pair-picture img{height:220px}.pair-examples h3{text-align:center}.purchase-choice{flex-wrap:wrap}.purchase-choice select{max-width:100%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script>
+(function(){
+  var pair=0,backTarget=null,names=['ロブ6 ＋ ロブ6＋ワン','ロブ6 ＋ ロブ6 PⅡ','ロブ6＋ワン ＋ ロブ6 PⅡ'];
+  var pack=document.getElementById('set-pack'),region=document.getElementById('set-region');
+  function render(){
+    var n=Number(pack.value),r=region.value,shipping=n===2?({mainland:880,hokkaido:1430,okinawa:2230,island:null}[r]):({mainland:0,hokkaido:550,okinawa:3300,island:3300}[r]);
+    var price=n===2?11000:22000;
+    document.getElementById('selected-set').textContent=names[pair]+'　各'+(n/2)+'本・合計'+n+'本';
+    document.getElementById('selected-total').textContent=shipping===null?'この組み合わせは配送対象外です':(price+shipping).toLocaleString('ja-JP')+'円（税込）';
+    document.getElementById('selected-shipping').textContent=shipping===null?'2本セットは離島へ発送できません。4本セットをご確認ください。':'商品 '+price.toLocaleString('ja-JP')+'円 ＋ 送料 '+shipping.toLocaleString('ja-JP')+'円';
+    document.getElementById('selected-gift').textContent=n===4?'「古花」のサンプル特典付き':'';
+  }
+  document.querySelectorAll('.pair-examples article').forEach(function(card){var note=document.createElement('p');note.className='pair-image-note';note.textContent='共通イメージです。各銘柄の実物写真ではありません。';card.insertBefore(note,card.querySelector('h3'));});
+  document.querySelectorAll('.set-choice').forEach(function(a){a.addEventListener('click',function(){backTarget=a;pair=Number(a.dataset.pair);pack.value=a.dataset.pack;render();});});
+  document.querySelectorAll('img[src*="bottle-"],.pair-photo').forEach(function(img){if(img.closest('a'))return;var a=document.createElement('a');a.href='#order';a.className='product-photo-link';a.setAttribute('aria-label','ロブ6を含むセットの購入案内を見る');img.parentNode.insertBefore(a,img);a.appendChild(img);a.addEventListener('click',function(){backTarget=a;pair=0;render();});});
+  document.getElementById('lp-back').addEventListener('click',function(){if(backTarget){var target=backTarget;backTarget=null;history.replaceState(null,'',location.pathname+location.search);target.scrollIntoView({block:'center',behavior:'instant'});}else{location.hash='set-menu';}});
+  pack.addEventListener('change',render);region.addEventListener('change',render);render();
+})();
 </script>
 </body>
 </html>
